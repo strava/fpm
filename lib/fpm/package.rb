@@ -365,8 +365,8 @@ class FPM::Package
       installdir = staging_path
     end
 
-    Find.find(staging_path) do |path|
-      match_path = path.sub("#{staging_path}/", '')
+    Find.find(installdir) do |path|
+      match_path = path.sub("#{installdir}/", '')
 
       attributes[:excludes].each do |wildcard|
         @logger.debug("Checking path against wildcard", :path => path, :wildcard => wildcard)
